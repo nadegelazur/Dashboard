@@ -46,7 +46,8 @@ const Dashboard = () => {
         return (
             <div className='wrapper'>
                 <div className='header'>
-                    <h1>Hello {dataMain.userInfos.firstName}</h1>
+                    <h1>Hello <span className='colorName'>{dataMain.userInfos.firstName}</span>
+                    </h1>
                     <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
                 </div>
                 <div className='content'>

@@ -4,7 +4,6 @@ import User from '../../Models/User';
 import Perf from '../../Models/Perf';
 import Average from '../../Models/Average';
 
-
 const converData = (data, url) => {
     //console.log(url)
     if(url.includes('/activity')) {

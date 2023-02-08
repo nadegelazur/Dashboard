@@ -35,6 +35,29 @@ const SimpleLineChart = ({ average }) => {
         );
       }
     };
+    function placeLabelIntoTooltip(payload) {
+      if (typeof payload[0].unit !== "undefined") {
+        return (
+          <p className="into__tooltip-para">
+            {payload[0].value}{payload[0].unit}
+          </p>
+        );
+      }
+      if (payload && payload.length) {
+        return payload.map((prop, id) => {
+          return prop.dataKey === "calories" ? (
+            <li className="into__tooltip-list" key={id}>
+              {prop.value}kCal
+            </li>
+          ) : (
+            <li className="into__tooltip-list" key={id}>
+              {prop.value}Kg
+            </li>
+          );
+        });
+      }
+      return " ";
+    } 
     const CustomCursor = (prop) => {
       const { width, points } = prop;
       const X = points[0].x;
@@ -120,29 +143,7 @@ const SimpleLineChart = ({ average }) => {
         return fromLowerToUpperCase(days[6]);
     }
   }
-  function placeLabelIntoTooltip(payload) {
-    if (typeof payload[0].unit !== "undefined") {
-      return (
-        <p className="into__tooltip-para">
-          {payload[0].value} {payload[0].unit}
-        </p>
-      );
-    }
-    if (payload && payload.length) {
-      return payload.map((prop, id) => {
-        return prop.dataKey === "calories" ? (
-          <li className="into__tooltip-list" key={id}>
-            {prop.value}kCal
-          </li>
-        ) : (
-          <li className="into__tooltip-list" key={id}>
-            {prop.value}Kg
-          </li>
-        );
-      });
-    }
-    return " ";
-  } 
+  
   
   CustomTooltip.propTypes = {
     active: PropTypes.bool,

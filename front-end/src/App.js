@@ -20,7 +20,7 @@ function App() {
             <div className='container'>
               <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/user' element={<Dashboard />} />
+                {/* <Route path='/user' element={<Dashboard />} /> */}
                 <Route path='/user/:userId' element={<Dashboard />} />
                 <Route path='*' element={<NotFound />} />
               </Routes>

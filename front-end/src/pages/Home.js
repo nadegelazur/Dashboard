@@ -4,8 +4,6 @@ import ContextBtn from '../components/ContextBtn'
 
 import '../styles/Home.css'
 
-// import { useEffect, useState, Navigate } from 'react'
-
 /**
  * It returns a div with a logo and two links about user's id
  *

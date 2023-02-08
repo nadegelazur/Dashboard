@@ -43,14 +43,14 @@ const SimplePieChart = ({data}) => {
               <PieChart title='score'>
                   <circle className='pieChart__circle' 
                           fill="#fff"
-                          r="75"
+                          r="65"
                           cx="50%" cy="50%" >  
                   </circle> 
               <Pie  data={pieData}
                     dataKey="value" 
                     cx="50%" cy="50%" 
-                    innerRadius={75} 
-                    outerRadius={85} 
+                    innerRadius={65} 
+                    outerRadius={75} 
                     startAngle={90} 
                     endAngle={360 + 90} >
 
