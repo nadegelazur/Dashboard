@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/SimpleBarChart.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/SimpleBarChart.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import '../styles/SimpleBarChart.css'
+import PropTypes from "prop-types";
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+/**
+ * It's a function that takes an array of objects as a prop and returns a bar chart
+ * @prop   {Array}  sessions  Data from a user to BarChart
+ *
+ * @return  {JSX.Element}           Bar Chart
+ */
+
+const SimpleBarChart = ({activity}) => {
+   // console.log(activity)
+   function customTick(day) {
+        return Number(day.slice(8));
+      }
+   const CustomTooltip = ({active, payload}) => {
+        if(active &amp;&amp; payload) {
+            return (
+                &lt;div>           
+                    &lt;div className='cus_tooltip'>
+                        &lt;p>{`${payload[0].value} kg`}&lt;/p>
+                        &lt;p>{`${payload[1].value} cKal`}&lt;/p>
+                    &lt;/div>
+                &lt;/div>
+                
+            )    
+        }    
+   }  
+        return (
+                &lt;article className='toto'>
+                        &lt;div className='barchart__container-title'>
+                                &lt;h4>Activité quotidienne&lt;/h4>
+                        &lt;/div>
+                        &lt;ResponsiveContainer width="100%" height="100%">
+                                &lt;BarChart data={activity.sessions} barGap={8} width={500}
+                        height={300} >
+                                &lt;CartesianGrid strokeDasharray="2 2" vertical={false} />
+                                &lt;XAxis  dataKey="day" 
+                                        axisLine={false}
+                                        domain={["dataMin + 1", "dataMax + 3"]}
+                                        interval="preserveStartEnd"
+                                        tickLine={false}
+                                        tickFormatter={customTick}
+                                />
+                                &lt;YAxis  orientation='right'
+                                        axisLine={false}
+                                        interval="preserveStartEnd"
+                                        dataKey="kilogram"
+                                        yAxisId="kilogram"
+                                        domain={['dataMin-7', 'dataMax+1']}
+                                />
+                                &lt;YAxis  orientation='left'
+                                        axisLine={false}
+                                        interval="preserveStartEnd"
+                                        hide dataKey="calories" 
+                                        yAxisId="calories"
+                                        domain={[0, 'dataMax + 20']}
+                                />
+                                &lt;Tooltip content={&lt;CustomTooltip />} />
+                        
+                                &lt;Legend  iconType="circle"
+                                        verticalAlign='top'
+                                        align ='right'
+                                        height={40}
+                                        iconSize={7}
+                                        style={{ margin: "0, 30px, 0, 0", width: "100px" }}
+                                /> 
+                                &lt;Bar  barSize={10} 
+                                radius={[5, 5, 0, 0]}
+                                legendType="cercle"
+                                dataKey="kilogram"  
+                                yAxisId="kilogram"
+                                name="Poids (kg)"
+                                fill="#282D30" 
+                                />
+                                &lt;Bar  barSize={10} 
+                                legendType="cercle"
+                                radius={[5, 5, 0, 0]} 
+                                dataKey="calories" 
+                                yAxisId="calories" 
+                                fill="#E60000"
+                                name={"Calories brûlées (kCal)"}
+                                />
+                                &lt;/BarChart>
+                        &lt;/ResponsiveContainer>
+                &lt;/article>
+        );     
+} 
+
+SimpleBarChart.propTypes = {
+        sessions: PropTypes.arrayOf(
+          PropTypes.shape({
+            day: PropTypes.string,
+            kilogram: PropTypes.number,
+            calories: PropTypes.number,
+          }),
+        ),
+      };
+ 
+export default SimpleBarChart;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Activity.html">Activity</a></li><li><a href="Average.html">Average</a></li><li><a href="Perf.html">Perf</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Home">Home</a></li><li><a href="global.html#HorizontalNav">HorizontalNav</a></li><li><a href="global.html#InfoBtn">InfoBtn</a></li><li><a href="global.html#SimpleBarChart">SimpleBarChart</a></li><li><a href="global.html#SimpleLineChart">SimpleLineChart</a></li><li><a href="global.html#SimplePieChart">SimplePieChart</a></li><li><a href="global.html#SimpleRadarChart">SimpleRadarChart</a></li><li><a href="global.html#urlApi">urlApi</a></li><li><a href="global.html#urlMock">urlMock</a></li><li><a href="global.html#useApi">useApi</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Feb 08 2023 21:20:01 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
