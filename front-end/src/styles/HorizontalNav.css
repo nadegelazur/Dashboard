@@ -1,0 +1,40 @@
+.hornav_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 91px;
+    width: 100%;
+    background-color: #000;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+}
+.hornav_container div.bloc-logo {
+    left: 0;
+    display: inline-block;
+    margin-left: 2rem;
+}
+.hornav_container img.logo {
+    width: 178px;
+    height: 60.93px;
+}
+.hornav_container nav.bloc-nav {
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    margin-right: 2rem;
+}
+.hornav_container ul.bloc-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+.hornav_container .bloc-list a {
+    color: #fff;
+    list-style: none;
+    text-decoration: none;
+}
+.hornav_container .bloc-list a:hover {
+    text-decoration: underline;
+}

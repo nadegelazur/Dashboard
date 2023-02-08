@@ -1,0 +1,25 @@
+.toto {
+    height: 19rem;
+    margin: 20px;
+}
+
+.barchart__container-title {
+    position: absolute;
+    font-size: 15px;
+    left: 3.83%;
+    top: 8.5rem;
+    font-weight: bold;
+    color: #20253a;
+    line-height: 24px;
+    z-index: 10;
+}
+.cus_tooltip {
+    background-color: #E60000;
+    color: white;
+    width: 73px;
+    height: 63px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 25px;
+    border-radius: 0px;
+}

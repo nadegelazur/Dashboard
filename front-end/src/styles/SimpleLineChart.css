@@ -1,0 +1,15 @@
+.linechart__container {
+    width: 32%;
+    height: 80%;
+    background: #FF0000;
+    position: relative;
+    
+}
+.linechart__container-title {
+    position: absolute;
+    top: 3px;
+    left: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    opacity: 0.5;
+}

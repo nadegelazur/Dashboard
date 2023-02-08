@@ -1,0 +1,17 @@
+.switch-button {
+    background: rgba(224 223 223 / 56%);
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    font: bold;
+    letter-spacing: 1px;
+    color: red;
+    border: 1px solid #d2d1d1;
+    position: relative;
+    box-shadow: 5px 5px 5px #cfcfcf;
+    margin: 0 53px;
+}

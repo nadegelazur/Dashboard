@@ -1,0 +1,48 @@
+.wrapper {
+    width: 90%;
+    height: 100vh;
+}
+.header h1 {
+    font-size: 48px;
+    line-height: 24px;
+}
+.header p {
+    font-size: 18px;
+}
+.content {
+    /* background-color: rgb(246, 161, 58); */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 71vh;
+    justify-content: space-between;
+}
+.charts {
+    width: 70%;
+    height: auto;
+    /* background-color: #6a4848; */
+    display: flex;
+    flex-direction: column;
+}
+.top-charts {
+    background-color: #FBFBFB;
+    width: 100%;
+    height: 50%;
+}
+.bottom-charts {
+    /* background-color: rgb(69, 58, 43); */
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn_infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    height: auto;
+    /* background-color: rgb(143, 131, 154); */
+}

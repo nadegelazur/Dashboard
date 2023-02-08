@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import VerticalNav from './components/VerticalNav';
+import HorizontalNav from './components/HorizontalNav';
+import Dashboard from './pages/Dashboard';
+import Home from './pages/Home';
+
+
+import NotFound from './pages/NotFound';
+import  ApiContextProvider from './utils/contexts/ApiContext'
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApiContextProvider>
+    <Router>
+        <div className="App">
+            <HorizontalNav />
+            <VerticalNav />
+            <div className='container'>
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/user' element={<Dashboard />} />
+                <Route path='/user/:userId' element={<Dashboard />} />
+                <Route path='*' element={<NotFound />} />
+              </Routes>
+            </div>
+        </div>
+    </Router>
+  </ApiContextProvider>  
   );
 }
 
